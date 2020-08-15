@@ -8,6 +8,7 @@ Do the following after spinning a new droplet
 3. Create a directory and environment files
 4. Download docker images from Docker Hub ($docker-compose build -u)
 5. Pull app files from github
+6. rename to app file (mv gammatrades-app app)
 
 1. Create a new user (jenkins)
 ------------------------------
