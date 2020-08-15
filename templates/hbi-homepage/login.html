@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{% static 'hbi-homepage_static/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'hbi-homepage_static/css/mdb.min.css' %}" rel="stylesheet">
+    <link href="{% static 'hbi-homepage_static/css/style.css' %}" rel="stylesheet">
+  </head>
+
+  <body>
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+      <div class="container">
+
+        <!-- Brand -->
+        <!-- <a class="navbar-brand" href="https://www.hengbao.com/en/" target="_blank"><strong>About Us</strong></a> -->
+
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <!-- Left -->
+          <ul class="navbar-nav mr-auto">
+          </ul>
+
+          <!-- Right -->
+          <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item">
+              <a href="{% url 'home' %}" class="nav-link" target="_blank">Home</a>
+              </li>
+
+            <li class="nav-item">
+              <a href data-toggle="modal" class="nav-link" data-target="#modalLoginForm">Login</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="{% url 'gallery' %}" class="nav-link" target="_blank">Demo</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+</nav>
+<!-- Navbar -->
+
+
+<div class="view" style="background-image: url({% static 'hbi-homepage_static/unsplash10.jpg' %}); background-repeat: no-repeat; background-size: cover;">
+
+            <!-- Mask & flexbox options-->
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center" >
+
+              <!-- Content -->
+
+
+                        <!-- ============================================================== -->
+                        <!-- basic form  -->
+                        <!-- ============================================================== -->
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header text-center"><strong>Login</strong></h5>
+                                        <div class="card-body">
+                                            <form class="mt-2" autocomplete="off" action="{% url 'login' %}" method="post">
+                                                {% csrf_token %}
+                                                {% include 'partials/_messages.html' %}
+
+
+
+                                                <div class="modal-body mx-3">
+
+                      <div class="md-form mb-5">
+                        <!-- <i class="fa fa-envelope prefix grey-text"></i>  -->
+                        <i class="fas fa-user mr-2 prefix grey-text"></i><input type="email" id="defaultForm-email" class="form-control validate" name="username">
+                        <label data-error="error!" data-success="" for="defaultForm-email">Your email</label>
+                      </div>
+
+                      <div class="md-form mb-4">
+                        <i class="fa fa-lock prefix grey-text"></i>
+                        <input type="password" id="defaultForm-pass" class="form-control validate" name="password">
+                        <label data-error="error!" data-success="" for="defaultForm-pass">Your password</label>
+                      </div>
+
+                    <div class="modal-body d-flex justify-content-center">
+                      <input type="submit" class="btn btn-default" value="Login" />
+                    </div>
+                 </div>
+
+
+
+                                  <!--
+                                                <div class="form-group text-muted">Please Key In Your Credentials
+
+                                                    <p></p>
+                                                    <input type="text" class="form-control form-control-sm"
+                                                        placeholder="Username / Email" name="username" value="{{ data.username }}">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <input type="password" class="form-control form-control-sm" placeholder="Password" name="password">
+                                                </div>
+
+                                                <input type="submit" class="btn btn-primary btn-block btn-sm" value="Log in" />
+
+                                                <div class="lower mt-3">
+                                                    <div class="row">
+                                                    </div>
+                                                    <p class="text-center">
+                                                        <a class="text-center" href="{% url 'reset-password' %}"><small>Forgot Password?</small> </a>
+                                                    </p>
+                                                    <p class="text-center">
+                                                        <a class="text-center" href="{% url 'signup' %}"><small>Sign-Up</small> </a>
+                                                    </p>
+                                                </div>
+                                        -->
+
+
+
+                                            </form>
+
+                                            <div class="modal-footer d-flex justify-content-center">
+            <a class="text-center" href="{% url 'reset-password' %}"><small>Forgot Password?</small> </a>
+          </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- end basic form  -->
+                        <!-- ============================================================== -->
+
+
+
+
+
+
+
+
+
+
+
+              <!-- Content -->
+
+            </div>
+            <!-- Mask & flexbox options-->
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Start your project here-->
+
+    <!-- /Start your project here-->
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="{% static 'hbi-homepage_static/js/jquery-3.3.1.min.js' %}"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="{% static 'hbi-homepage_static/js/popper.min.js' %}"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="{% static 'hbi-homepage_static/js/bootstrap.min.js' %}"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="{% static 'hbi-homepage_static/js/mdb.min.js' %}"></script>
+    <script src="https://kit.fontawesome.com/a5df1c9b6b.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      new WOW().init();
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,135 @@
+{% extends 'hbi-dashboard/base.html' %}
+{% load static %}
+{% block title %} {{ listing.title }} {% endblock %}
+
+{% block content %}
+
+{% include 'hbi-dashboard/_topbar.html' %}
+
+    <div class="dashboard-main-wrapper">
+
+        {% include 'hbi-dashboard/_leftsidebar.html' %}
+
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="dashboard-finance">
+                <div class="container-fluid dashboard-content">
+                    <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title"> {{ title }} {{ listing.title }} ({{ listing.type }})</h2>
+
+                            </div>
+                        </div>
+                    </div>
+
+ <!-- START -->
+
+
+<div class="row">
+<!-- ============================================================== -->
+<!-- [  Document  ][  Contributor                                   -->
+<!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- DOCUMENT                                                       -->
+            <!-- ============================================================== -->
+
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+                            <!-- <div class="card">  -->
+                                <!-- <h5 class="card-header">COLUMN 4</h5>  -->
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="section-block" id="image-card">
+                                    <!-- <h3 class="section-title">Card Images</h3>
+                                    <p>Cards include a few options for working with images. Choose from appending “image caps” at either end of a card, overlaying images with card content, or simply embedding the image in a card.</p>  -->
+                                </div>
+                            </div>
+
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <div class="card-body">
+                                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                    </ol>
+                                    <div class="carousel-inner" style="max-height: 450px">
+                                        <div class="carousel-item active">
+                                            <img class="d-block w-100" src="{{ listing.image1_file.url }}" alt="First slide">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" src="{{ listing.image2_file.url }}" alt="Second slide">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" src="{{ listing.image3_file.url }}" alt="Third slide">
+                                        </div>
+                                    </div>
+                                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                        <span><i class="fas fa-2x fa-arrow-circle-left" style="color:red;"></i></span></a>
+                                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                        <span><i class="fas fa-2x fa-arrow-circle-right" style="color:red;"></i></span></a>
+                                </div>
+                            </div>
+                                        <p class="card-text" style="background-color:#decdc3">{{ listing.description }}</p>
+
+                                    </div>
+                                </div>
+                            <!-- </div>  -->
+                        </div>
+                            </div>
+                        </div>
+
+    <!-- ============================================================== -->
+    <!-- CONTRIBUTOR                                                    -->
+    <!-- ============================================================== -->
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Contributor</h3>
+                    <img class="img-fluid mb-4" src="{{ listing.contributor.photo.url }}" alt="Card image cap">
+                    <h4 class="mb-0 text-black nav-user-name">Name : {{ listing.contributor.first_name }} {{ listing.contributor.last_name }}</h4>
+                    <h4 class="mb-0 text-black nav-user-name">Email : {{ listing.contributor.username }}</h4>
+
+                </div>
+            </div>
+        </div>
+
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <div class="card-body">
+                    <!-- <h3 class="card-title">Download</h3>  -->
+                    <!-- <a href="#" class="btn btn-primary">DOWNLOAD DOCUMENT <i class="fas fa-download"></i></a> -->
+                    <a href="{{ listing.document_file.url }}" class="btn btn-success" download>Download <i class="fas fa-download"></i></a>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+ <!-- END -->
+
+            </div>
+            {% include 'hbi-dashboard/_footer.html' %}
+        </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+
+{% endblock %}

@@ -1,0 +1,152 @@
+{% extends 'hbi-dashboard/base.html' %}
+{% load static %}
+{% block title %} | Blank {% endblock %}
+
+
+{% block content %}
+
+<style>
+
+body {
+  overflow-y:hidden;
+}
+
+
+
+
+
+
+</style>
+
+<body>
+
+
+
+{% include 'hbi-dashboard/_topbar.html' %}
+
+    <div class="dashboard-main-wrapper">
+
+        {% include 'hbi-dashboard/_leftsidebar.html' %}
+
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="dashboard-finance">
+                <div class="container-fluid dashboard-content">
+                    <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title">{{ title }}</h2>
+                                <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
+
+                            </div>
+                        </div>
+                    </div>
+
+ <!-- START -->
+
+<div class="row">
+<!-- ============================================================== -->
+<!--   [  1  ] [  2  ]  [  3  ]                                     -->
+<!-- ============================================================== -->
+            <!-- ========================================================== -->
+            <!-- COLUMN 1                                                   -->
+            <!-- ========================================================== -->
+            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+                    <h5 class="card-header">COLUMN 1 </h5>
+                <!--
+                    <div class="card-body">
+                        <canvas id="chartjs_balance_bar"></canvas>
+                    </div>
+                -->
+                </div>
+            </div>
+            <!-- ========================================================= -->
+            <!--  COLUMN 2                                                 -->
+            <!-- ========================================================= -->
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="card">
+                    <h5 class="card-header">COLUMN 2</h5>
+
+                </div>
+            </div>
+            <!-- ============================================================== -->
+             <!-- COLUMN  3                                                     -->
+            <!-- ============================================================== -->
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="card">
+                    <h5 class="card-header">COLUMN 3</h5>
+
+
+                </div>
+            </div>
+   </div>
+
+
+<div class="row">
+<!-- ============================================================== -->
+<!-- [  4  ][  5  ]                                                 -->
+<!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- COLUMN 4                                                       -->
+            <!-- ============================================================== -->
+
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">COLUMN 4</h5>
+
+
+                            </div>
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- COLUMN 5                                                       -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">COLUMN 5</h5>
+                            <!--
+                                <div class="card-body">
+                                    <div id="goodservice"></div>
+                                </div>
+                            -->
+                            </div>
+                        </div>
+      </div>
+
+
+<div class="row">
+<!-- ============================================================== -->
+<!-- [  6  ]  -->
+<!-- ============================================================== -->
+           <!-- =============================================================== -->
+            <!--  COLUMN 6                                                      -->
+            <!-- ============================================================== -->
+
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">COLUMN 6</h5>
+
+                            </div>
+                        </div>
+
+ </div>
+
+
+ <!-- END -->
+
+            </div>
+            {% include 'hbi-dashboard/_footer.html' %}       <!-- footer -->
+        </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+</body>
+
+{% endblock %}

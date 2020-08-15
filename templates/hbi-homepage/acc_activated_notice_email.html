@@ -1,0 +1,13 @@
+{% autoescape off %}
+
+The following new member has just activated his account.
+
+Name: {{ user.get_full_name }}
+Email: {{ user.username }}
+
+He may require approval from IT Administrator in order to login to his account.
+
+Cheers,
+GammaTrades IT Administrator
+
+{% endautoescape %}

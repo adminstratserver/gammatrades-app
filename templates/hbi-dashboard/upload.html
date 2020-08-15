@@ -1,0 +1,67 @@
+{% extends 'hbi-dashboard/base.html' %}
+{% load static %}
+{% block title %} | UPLOAD {% endblock %}
+
+{% block content %}
+
+{% include 'hbi-dashboard/_topbar.html' %}
+
+    <div class="dashboard-main-wrapper">
+
+        {% include 'hbi-dashboard/_leftsidebar.html' %}
+
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="dashboard-finance">
+                <div class="container-fluid dashboard-content">
+                    <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title">UPLOAD</h2>
+                                <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
+
+                            </div>
+                        </div>
+                    </div>
+
+ <!-- START -->
+<!-- ============================================================== -->
+<!-- [  6  ]  -->
+<!-- ============================================================== -->
+           <!-- =============================================================== -->
+            <!--  COLUMN 6                                                      -->
+            <!-- ============================================================== -->
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+                    <h5 class="card-header">UPLOAD - VICTOR</h5>
+
+                    <form method="post" enctype="multipart/form-data">
+                        {%csrf_token %}
+                        <input type="file" name="document1">
+                        <button type="submit">Submit</button>
+                    </form>
+
+                </div>
+            </div>
+
+ </div>
+
+
+ <!-- END -->
+
+            </div>
+            {% include 'hbi-dashboard/_footer.html' %}       <!-- footer -->
+        </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+
+{% endblock %}

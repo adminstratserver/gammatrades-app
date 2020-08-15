@@ -1,0 +1,125 @@
+{% extends 'hbi-dashboard/base.html' %}
+{% load static %}
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+
+
+{% include 'hbi-dashboard/_topbar.html' %}
+
+    <div class="dashboard-main-wrapper">
+
+        {% include 'hbi-dashboard/_leftsidebar.html' %}
+
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="dashboard-finance">
+                <div class="container-fluid dashboard-content">
+                    <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title">{{ title }}</h2>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+   <!-- START -->
+
+                  <!-- ============================================================== -->
+                  <!-- [   7    ][   8  ]                                             -->
+                  <!-- ============================================================== -->
+                    <div class="row">
+                        <!-- ============================================================== -->
+                        <!-- [   7    ]                                                     -->
+                        <!-- ============================================================== -->
+
+                       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Profile</h5>
+                            <div class="card-body">
+                                    <div class="user-avatar text-center d-block">
+                                        <img src="{{ user.photo.url }}" alt="User Avatar" class="rounded-circle user-avatar-xxl">
+                                        <!-- <img src="{% static 'hbi-dashboard_static/assets/images/avatar-1.jpg' %}" alt="User Avatar" class="rounded-circle user-avatar-xxl"> -->
+                                    </div>
+                                    <div class="text-center">
+                                        <h2 class="mb-0 text-black nav-user-name">{{ user.first_name }} {{ user.last_name }}</h2>
+                                        <p>Project Manager @Influnce</p>
+
+                                        <form>
+                                          <div class="form-group">
+                                            <label for="exampleFormControlFile1">Picture123</label>
+                                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                          </div>
+                                        </form>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- ============================================================== -->
+                        <!-- select options  -->
+                        <!-- ============================================================== -->
+                        <div class="row">
+                            <div class="row">
+                                                    <div class="col-md-5 mb-3">
+                                                        <label for="country">Country</label>
+                                                        <select class="custom-select d-block w-100" id="country" required="">
+                                                            <option value="">Choose...</option>
+                                                            <option>United States</option>
+                                                        </select>
+                                                        <div class="invalid-feedback">
+                                                            Please select a valid country.
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <label for="state">State</label>
+                                                        <select class="custom-select d-block w-100" id="state" required="">
+                                                            <option value="">Choose...</option>
+                                                            <option>California</option>
+                                                        </select>
+                                                        <div class="invalid-feedback">
+                                                            Please provide a valid state.
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 mb-3">
+                                                        <label for="zip">Zip</label>
+                                                        <input type="text" class="form-control" id="zip" placeholder="" required="">
+                                                        <div class="invalid-feedback">
+                                                            Zip code required.
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- end select options  -->
+                        <!-- ============================================================== -->
+
+
+
+   <!-- END -->
+
+            </div>
+            {% include 'hbi-dashboard/_footer.html' %}
+        </div>
+        <!-- ============================================================== -->
+        <!-- end wrapper  -->
+        <!-- ============================================================== -->
+      </div>
+    </div>
+
+{% endblock %}

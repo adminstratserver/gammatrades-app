@@ -1,0 +1,93 @@
+{% extends 'hbi-dashboard/base.html' %}
+{% load static %}
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+
+{% include 'hbi-dashboard/_topbar.html' %}
+
+    <div class="dashboard-main-wrapper">
+
+        {% include 'hbi-dashboard/_leftsidebar.html' %}
+
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="dashboard-finance">
+                <div class="container-fluid dashboard-content">
+                    <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title">{{ title }}</h2>
+                            </div>
+                        </div>
+                    </div>
+
+ <!-- START -->
+
+
+
+
+
+					<!-- ============================================================== -->
+                        <!-- striped table -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                             <div class="card">
+                                <!-- <h5 class="card-header">Striped Table</h5>  -->
+                                <div class="card-body">
+                                    <table class="table table-striped">
+                                         <thead>
+                                            <tr>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Country</th>
+                                                <th scope="col">Agent</th>
+												<th scope="col">Update</th>
+                                                <th scope="col">Delete</th>
+                                            </tr>
+                                         </thead>
+                                        <tbody>
+                                            {% for item in my_customers %}
+										     <tr>
+                                                <td scope="row">{{item.name}}</td>
+                                                <td>{{item.country}}</td>
+                                                <td>{{item.agent}}</td>
+												<td><a class="btn btn-sm btn-info" href="{% url 'edit_customer' item.id %}">Update</a></td>
+                                                <td><a class="btn btn-sm btn-danger" href="{% url 'delete_customer' item.id %}">Delete</a></td>
+                                            </tr>
+										  {% endfor %}
+
+										</tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- end striped table -->
+                        <!-- ============================================================== -->
+
+
+                <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <a href="{% url 'create_customer' %}" class="btn btn-outline-primary">New Customer</a>
+                        </div>
+                    </div>
+
+
+
+ <!-- END -->
+
+            </div>
+            {% include 'hbi-dashboard/_footer.html' %}       <!-- footer -->
+        </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+
+{% endblock %}

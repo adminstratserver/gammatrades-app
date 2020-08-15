@@ -1,0 +1,105 @@
+{% extends 'hbi-dashboard/base.html' %}
+{% load static %}
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+
+
+{% include 'hbi-dashboard/_topbar.html' %}
+
+<div class="dashboard-main-wrapper">
+  {% include 'hbi-dashboard/_leftsidebar.html' %}
+
+  <div class="dashboard-wrapper">
+
+    <div class="container-fluid dashboard-content ">
+
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="page-header">
+                    <h2>{{ title }} </h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-12 col-lg-8 col-md-8 col-sm-12 col-12">
+                <div class="row">
+                {% if listings %}
+                     {% for listing in listings %}
+                          <div class="col-xl-3 col-lg-6 col-md-12 col-sm-12 col-12">
+                                <div class="product-thumbnail">
+                                    <div class="product-img-head">
+                                        <div class="product-img">
+                                                 <img src="{{ listing.cover_file.url }}" alt="" class="card-img-top123"></div>
+                                       <div class="ribbon ribbon-top-right"><span>{{ listing.type }}</span></div>
+                                    </div>
+                                    <div class="product-content">
+                                        <div class="product-content-head">
+                                            <h3 class="product-title">{{ listing.title|truncatechars:20 }}</h3>
+                                        </div>
+                                        <div class="product-btn">
+                                            <a href="{% url 'selecteddocument' listing.id %}" class="btn btn-primary">See Details </a>
+
+                                            <!-- <a href="{{ listing.pdf.url }}" class="btn btn-success" download>Download</a>  -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                     {% endfor %}
+                {% else %}
+                        <div class="col-md-12">
+                            <p>No Listings Available</p>
+                        </div>
+                {% endif %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+<!-- pagination -->
+     <div class="row">
+        <div class="col-md-12">
+          {% if listings.has_other_pages %}
+            <ul class="pagination">
+              {% if listings.has_previous %}
+                <li class="page-item">
+                  <a href="?page={{listings.previous_page_number}}" class="page-link">&laquo;</a>
+                </li>
+              {% else %}
+                <li class="page-item disabled">
+                  <a class="page-link">&laquo;</a>
+                </li>
+              {% endif %}
+              {% for i in listings.paginator.page_range %}
+                {% if listings.number == i %}
+                  <li class="page-item active">
+                    <a class="page-link">{{i}}</a>
+                  </li>
+                {% else %}
+                  <li class="page-item">
+                    <a href="?page={{i}}" class="page-link">{{i}}</a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+              {% if listings.has_next %}
+                <li class="page-item">
+                  <a href="?page={{listings.next_page_number}}" class="page-link">&raquo;</a>
+                </li>
+              {% else %}
+                <li class="page-item disabled">
+                  <a class="page-link">&raquo;</a>
+                </li>
+              {% endif %}
+            </ul>
+          {% endif %}
+        </div>
+     </div>
+
+  {% include 'hbi-dashboard/_footer.html' %}
+  </div>
+</div>
+{% endblock %}

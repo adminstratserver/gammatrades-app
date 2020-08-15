@@ -1,0 +1,131 @@
+{% extends 'hbi-dashboard/base.html' %}
+{% load static %}
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+
+{% include 'hbi-dashboard/_topbar.html' %}
+
+    <div class="dashboard-main-wrapper">
+
+        {% include 'hbi-dashboard/_leftsidebar.html' %}
+
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="dashboard-finance">
+                <div class="container-fluid dashboard-content">
+                    <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title">{{ title }}</h2>
+                            </div>
+                        </div>
+                    </div>
+
+ <!-- START -->
+
+
+                    <div class="row">
+                    <!-- ============================================================== -->
+                    <!-- basic table  -->
+                    <!-- ============================================================== -->
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+
+                          <!--  <h5 class="card-header">Basic Table</h5>  -->
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered first">
+                                        <thead>
+                                            <tr>
+                                                <th>Title</th>
+                                                <th>Type</th>
+                                                <th>Country</th>
+                                                <th>Upload Date</th>
+                                                <th>Publish</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for item in listing %}
+                                            <tr>
+                                                <td> {{ item.title}} </td>
+                                                <td> {{ item.type}} </td>
+                                                <td> {{ item.country}} </td>
+                                                <td> {{ item.list_date}} </td>
+                                                <td>
+                                                    <div class="switch-button switch-button-xs">
+                                                        <input type="checkbox" checked="" name="switch12" id="{{ item.id }}"><span>
+                                                    <label for="{{ item.id }}"></label></span>
+                                                    </div>
+                                                </td>
+                                                <td> <a href="{% url 'edit_document' item.id %}" class="badge badge-pill badge-success">Edit</a> </td>
+                                                <td> <a href="{% url 'delete_document' item.id %}" class="badge badge-pill badge-danger">Delete</a> </td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+
+                                    </table>
+                                    <br><br>
+                                    <a href="#" class="btn btn-primary">Save Changes</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end basic table  -->
+                    <!-- ============================================================== -->
+                </div>
+ <!-- END -->
+
+            </div>
+            {% include 'hbi-dashboard/_footer.html' %}       <!-- footer -->
+        </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+
+
+    <link rel="stylesheet" href="{% static 'hbi-dashboard_static/assets/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <link href="{% static 'hbi-dashboard_static/assets/vendor/fonts/circular-std/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'hbi-dashboard_static/assets/libs/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'hbi-dashboard_static/assets/vendor/fonts/fontawesome/css/fontawesome-all.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'hbi-dashboard_static/assets/vendor/datatables/css/dataTables.bootstrap4.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'hbi-dashboard_static/assets/vendor/datatables/css/buttons.bootstrap4.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'hbi-dashboard_static/assets/vendor/datatables/css/select.bootstrap4.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'hbi-dashboard_static/assets/vendor/datatables/css/fixedHeader.bootstrap4.css' %}">
+
+
+<!-- Optional JavaScript -->
+    <script src="{% static 'hbi-dashboard_static/assets/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'hbi-dashboard_static/assets/vendor/bootstrap/js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'hbi-dashboard_static/assets/vendor/slimscroll/jquery.slimscroll.js' %}"></script>
+    <script src="{% static 'hbi-dashboard_static/assets/vendor/multi-select/js/jquery.multi-select.js' %}"></script>
+    <script src="{% static 'hbi-dashboard_static/assets/libs/js/main-js.js' %}"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="{% static 'hbi-dashboard_static/assets/vendor/datatables/js/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+    <script src="{% static 'hbi-dashboard_static/assets/vendor/datatables/js/buttons.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'hbi-dashboard_static/assets/vendor/datatables/js/data-table.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.colVis.min.js"></script>
+    <script src="https://cdn.datatables.net/rowgroup/1.0.4/js/dataTables.rowGroup.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
+
+
+
+{% endblock %}

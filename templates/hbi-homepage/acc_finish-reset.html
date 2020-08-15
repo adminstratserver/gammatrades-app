@@ -1,0 +1,11 @@
+{% autoescape off %}
+Hi {{ user.first_name }},
+
+We have received a request to reset your password, please click on the link below to proceed.
+
+http://{{ domain }}{% url 'change-password' uidb64=uid token=token123 %}
+
+Cheers,
+GammaTrades IT Administrator
+
+{% endautoescape %}

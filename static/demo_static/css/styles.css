@@ -1,0 +1,234 @@
+html,
+body {
+    height:100%;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+.btn {
+    transition: all 0.3s ease-in-out;
+}
+
+@media(max-width:768px) {
+    #header {
+        text-align:center;
+    }
+    #header img {
+        margin:20% auto 0;
+    }
+    #social {
+        text-align:center;
+    }
+    #social hr, #who hr {
+        margin:8% auto;
+    }
+    #who {
+        text-align:center;
+    }
+    #who img {
+        margin-top:15%;
+    }
+    #footer {
+        text-align:center;
+    }
+}
+
+.navbar {
+  background-color:rgba(21, 31, 33, 0.5) !important;
+  border-bottom: 1px solid #dedede;
+  font-family: 'Alegreya Sans', sans-serif;   
+}
+
+.navbar .nav .nav-item .nav-link {
+  color: #d1d1d1;
+}
+
+.navbar .nav .nav-item .nav-link:hover {
+  color: #fff;
+}
+
+.navbar-toggler {
+    color: white;
+}
+
+/*HEADER*/
+
+#header {
+    background:url('../img/stars-bg.jpg') center center no-repeat;
+    background-size:cover;
+    height:100%;
+    color:white;
+    display:flex;
+    align-items:center;
+}
+
+#header img {
+    padding:0 0 20px;
+    width:80%;
+}
+
+#header .header-right {
+    background-color:rgba(0,0,0,0.5);
+    padding:30px;
+    border-radius:10px;
+}
+
+#header .fa {
+    margin:5% 0;
+}
+
+#header a .fa {
+    color:#fff;
+}
+
+#header a .fa:hover {
+    color:#ccc;
+}
+
+/*SOCIAL*/
+
+#social {
+    padding:4.25rem 0;
+}
+
+#social .fa {
+    font-size:1.5em;
+    color:#be2835;
+    border:2px solid #be2835;
+    width:60px;
+    height:60px;
+    border-radius:30%;
+    text-align:center;
+    padding:30% 0;
+    margin-top:10px;
+    transition:all 0.4s ease-in-out;
+}
+
+#social .fa:hover {
+    color:#fff;
+    background:#be2835;
+}
+
+/*WHO*/
+
+#who {
+    padding:5rem 0;
+    background-color:#f6f6f6;
+}
+
+#who .btn-who {
+    background-color:#be2835;
+    color:#fff;
+    width:50%;
+}
+
+#who .btn-who:hover {
+    background-color:transparent;
+    border:1px solid #be2835;
+    color:#be2835;
+}
+
+/*WORK*/
+
+#work {
+    padding:5rem 0;
+}
+
+#work .work-img {
+    position:relative;
+}
+
+#work .work-img .img-overlay {
+    position:absolute;
+    top:0;
+    left:0;
+    background-color:rgba(0,0,0,0.5);
+    width:100%;
+    height:100%;
+    background-image: url('../img/eye.png');
+    background-position:center center;
+    background-repeat:no-repeat;
+    opacity:0;
+    z-index:0;
+    transition:all 0.3s ease-in-out;
+}
+
+#work .work-img .img-overlay:hover {
+    opacity:1;
+    z-index:1;
+}
+
+/*WHY*/
+
+#why {
+    padding:5rem 0;
+    background-color:#f6f6f6;
+}
+
+#why .fa {
+    color:#be2835;
+    padding:15px 0;
+}
+
+/*CUSTOMERS*/
+
+#customers {
+    padding:5rem 0;
+    overflow:hidden;
+}
+
+#customers .carousel-indicators li {
+    background-color:#be2835;
+}
+
+#customers .carousel-inner {
+    margin-bottom:50px;
+}
+
+#customers .carousel-indicators {
+    margin-bottom:-50px;
+}
+
+/*PRICING*/
+
+#pricing {
+    padding:5rem 0;
+    background-color:#f6f6f6;
+}
+
+#pricing .card .card-header {
+    background-color:#6e6e6e;
+    color:#fff;
+    transition:all 0.2s ease-in-out;
+}
+
+#pricing .card .standard {
+    background-color:#be2835;
+    font-size:1.3em;
+    padding:15px 0;
+}
+
+#pricing .card .card-header:hover {
+    background-color:#be2835;
+}
+
+/*CONTACT*/
+
+#contact {
+    padding:5rem 0;
+}
+
+/*FOOTER*/
+
+#footer {
+    padding:2rem 0;
+    background-color:#484848;
+    color:white;
+}
+
+#footer a {
+    color:white;
+}
+
+#footer .fa {
+    padding:0 5px;
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test - Index</title>
+</head>
+<body>
+
+<form align="center" action="{% url 'testget' %}" method="post">
+    {% csrf_token %}
+Name: <input type="text" name="name123"><br>
+    <input type="submit" value="SUBMIT">
+
+</form>
+
+
+</body>
+</html>

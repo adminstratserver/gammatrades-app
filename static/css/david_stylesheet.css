@@ -1,0 +1,73 @@
+body, html {
+  height: 100%;
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
+@media (max-width: 768px) {
+  #header {
+      text-align: center;
+  }
+}
+
+.navbar {
+  background-color: rgba(21,31,33,0.5);
+  border-bottom: 1px solid #dedede;
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
+.navbar .navbar-nav .nav-link {
+  color: #d1d1d1;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: #fff;
+}
+
+.navbar-toggler-icon {
+  color: #fff;
+}
+
+/*HEADER*/
+
+#header {
+  border:5px solid green;
+  background: url(../img/corporate-business2.png) center center no-repeat;
+  background-size: cover;
+  height: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+#header img {
+  padding: 0 0 20px 0;
+  width: 80%;
+}
+
+#header .header-right {
+  background-color: rgba(0,0,0,0.5);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+#header .fa {
+  margin: 5% 0;
+}
+
+#header a .fa {
+  color: #fff;
+}
+
+#header a .fa:hover {
+  color: #ccc;
+}
+
+.hbi {
+
+  margin-top: 200px;
+  /* border:5px solid green;
+   border: 10px black;
+  background-color: aqua; */
+
+}
+

@@ -1,0 +1,68 @@
+{% extends 'hbi-dashboard/base.html' %}
+{% load static %}
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+
+{% include 'hbi-dashboard/_topbar.html' %}
+
+    <div class="dashboard-main-wrapper">
+
+        {% include 'hbi-dashboard/_leftsidebar.html' %}
+
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="dashboard-finance">
+                <div class="container-fluid dashboard-content">
+                    <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title"> Confirm Delete Customer {{ item.name }}?</h2>
+                            </div>
+                        </div>
+                    </div>
+
+ <!-- START -->
+
+
+
+<div class="row">
+<!-- ============================================================== -->
+<!-- [  6  ]  -->
+<!-- ============================================================== -->
+
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <!-- <div class="card"> -->
+                                <!-- <h5 class="card-header">COLUMN 6</h5>  -->
+
+                                    <!-- <form action="{% url 'delete_customer' item.id  %}" method="POST">  -->
+                                    <form action= "{% url 'delete_customer' item.id  %}" method="POST">
+                                        {% csrf_token %}
+                                        <a class="btn btn-warning" href="{% url 'home' %}">Cancel</a>
+
+                                        <input class="btn btn-danger" type="submit" name="Confirm" value="Confirm Delete">
+                                    </form>
+
+                            </div>
+                        <!-- </div>  -->
+
+ </div>
+
+
+ <!-- END -->
+
+            </div>
+            {% include 'hbi-dashboard/_footer.html' %}       <!-- footer -->
+        </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+
+{% endblock %}

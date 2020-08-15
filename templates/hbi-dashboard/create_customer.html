@@ -1,0 +1,74 @@
+{% extends 'hbi-dashboard/base.html' %}
+{% load static %}
+{% block title %} {{title }} {% endblock %}
+
+{% block content %}
+
+{% include 'hbi-dashboard/_topbar.html' %}
+
+    <div class="dashboard-main-wrapper">
+
+        {% include 'hbi-dashboard/_leftsidebar.html' %}
+
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="dashboard-finance">
+                <div class="container-fluid dashboard-content">
+                    <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title">{{ title }} </h2>
+                            </div>
+                        </div>
+                    </div>
+
+ <!-- START -->
+
+<div class="row">
+<!-- ============================================================== -->
+<!-- EDIT CUSTOMER PROFILE                                          -->
+<!-- ============================================================== -->
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <!-- <h5 class="card-header">COLUMN 4</h5>  -->
+
+
+                            <div class="row">
+                                <!-- <div class="col-md-3">
+                                     <div class="card card-body">
+                                        <img class="profile-pic-customer" src="{{customer.profile_pic.url}}" >
+                                     </div>
+                                </div>  -->
+                                <div class="col-md-12">
+                                    <div class="card card-body">
+
+                                        <form method="POST" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                            {{form.as_p}}
+
+                                        <input class="btn btn-primary" type="submit" name="Update Information" value="Save Changes">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+      </div>
+
+ <!-- END -->
+
+            </div>
+            {% include 'hbi-dashboard/_footer.html' %}       <!-- footer -->
+        </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+
+{% endblock %}

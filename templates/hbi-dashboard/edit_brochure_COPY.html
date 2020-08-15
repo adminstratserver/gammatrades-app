@@ -1,0 +1,103 @@
+{% extends 'hbi-dashboard/base.html' %}
+{% load static %}
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+
+{% include 'hbi-dashboard/_topbar.html' %}
+
+    <div class="dashboard-main-wrapper">
+
+        {% include 'hbi-dashboard/_leftsidebar.html' %}
+
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="dashboard-finance">
+                <div class="container-fluid dashboard-content">
+                    <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title">{{ title }} </h2>
+                                <h3 class="pageheader-title">{{ subtitle }} </h3>
+                            </div>
+                        </div>
+                    </div>
+
+ <!-- START -->
+
+<div class="row">
+<!-- ============================================================== -->
+<!-- EDIT CUSTOMER PROFILE                                          -->
+<!-- ============================================================== -->
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <!-- <h5 class="card-header">COLUMN 4</h5>  -->
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card card-body">
+
+                                        <form method="POST" enctype="multipart/form-data">
+                                            {% csrf_token %}
+
+                                            <p><strong>{{ selected_document.type }} Document <br>
+                                {{ form.document_file }}
+                               </strong></p>
+
+                               <p><strong>Title<br>
+                                {{ form.title }}
+                               </strong></p>
+
+                               <p><strong>Document Cover <br>
+                                {{ form.cover_file }}
+                               </strong></p>
+
+                               <p><strong>Document Preview Page-1 (optional) <br>
+                                {{ form.image1_file }}
+                               </strong></p>
+
+                               <p><strong>Document Preview Page-2 (optional) <br>
+                                {{ form.image2_file }}
+                               </strong></p>
+
+                               <p><strong>Document Preview Page-3 (optional) <br>
+                                {{ form.image3_file }}
+                               </strong></p>
+
+                               <p><strong>Description <br>
+                                {{ form.description }}
+                               </strong></p>
+
+
+
+
+
+                                        <input class="btn btn-primary" type="submit" name="Update Information" value="Save Changes">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+      </div>
+
+ <!-- END -->
+
+            </div>
+            {% include 'hbi-dashboard/_footer.html' %}       <!-- footer -->
+        </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+
+<script src="{% static 'js/david2-app.js' %}"></script>
+
+{% endblock %}

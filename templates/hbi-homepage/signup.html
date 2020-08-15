@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>GammaTrades</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{% static 'hbi-homepage_static/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'hbi-homepage_static/css/mdb.min.css' %}" rel="stylesheet">
+    <link href="{% static 'hbi-homepage_static/css/style.css' %}" rel="stylesheet">
+  </head>
+
+  <body>
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+      <div class="container">
+
+        <!-- Brand -->
+        <!-- <a class="navbar-brand" href="https://www.hengbao.com/en/" target="_blank"><strong>About Us</strong></a> -->
+
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <!-- Left -->
+          <ul class="navbar-nav mr-auto">
+            <!--
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">About MDB</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://mdbootstrap.com/getting-started/" target="_blank">Free download</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://mdbootstrap.com/bootstrap-tutorial/" target="_blank">Free tutorials</a>
+            </li> -->
+          </ul>
+
+          <!-- Right -->
+          <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item">
+              <a href="https://www.hengbao.com/en/" class="nav-link" target="_blank">
+                About
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="{% url 'login' %}" class="nav-link" target="_blank">
+                Login
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+
+<div class="view" style="background-image: url({% static 'hbi-homepage_static/unsplash11.jpg' %}); background-repeat: no-repeat; background-size: cover;">
+
+            <!-- Mask & flexbox options-->
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center" >
+
+              <!-- Content -->
+
+
+                <!-- ============================================================== -->
+                        <!-- basic form  -->
+                        <!-- ============================================================== -->
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header"><strong>Sign Up</strong></h5>
+                                    <div class="card-body">
+
+
+						<form class="mt-2" autocomplete="off" method="post">
+                                {% csrf_token %}
+                               {% include 'partials/_messages.html' %}
+
+
+                                <div class="form-group">
+
+                                    <div class="row">
+                                       <div class="col-md-6 mb-3">
+                                        <input type="text" class="form-control form-control-sm" placeholder="First Name" name="first_name" required>
+                                        <div class="invalid-feedback">
+                                          Valid first name is required.
+                                        </div>
+                                       </div>
+                                      <div class="col-md-6 mb-3">
+                                        <input type="text" class="form-control form-control-sm" placeholder="Last Name" name="last_name" required>
+                                        <div class="invalid-feedback">
+                                          Valid last name is required.
+                                        </div>
+                                      </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+
+                                    <input type="email" class="form-control form-control-sm"
+                                        placeholder="Email" name="email" value="{{data.email}}">
+
+                                </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="password" class="form-control form-control-sm" placeholder="Password" name="password">
+                                </div>
+                                 <div class="form-group">
+                                    <input type="password" class="form-control form-control-sm" placeholder="Confirm Password" name="password2">
+                                </div>
+                                <input type="submit" class="btn btn-primary btn-block btn-lg" value="Sign Up" />
+
+                                    <div class="lower my-3 pl-3 pr-3">
+                                    <small class="text-muted">
+                                        By signing up, you agree to our Terms , Data Policy and Cookies Policy .
+                                    </small>
+                                </div>
+                        </form>
+								   </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- end basic form  -->
+                        <!-- ============================================================== -->
+
+
+
+
+
+
+
+
+
+
+
+              <!-- Content -->
+
+            </div>
+            <!-- Mask & flexbox options-->
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Start your project here-->
+
+    <!-- /Start your project here-->
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="{% static 'hbi-homepage_static/js/jquery-3.3.1.min.js' %}"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="{% static 'hbi-homepage_static/js/popper.min.js' %}"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="{% static 'hbi-homepage_static/js/bootstrap.min.js' %}"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="{% static 'hbi-homepage_static/js/mdb.min.js' %}"></script>
+
+    <script type="text/javascript">
+      new WOW().init();
+    </script>
+  </body>
+
+</html>

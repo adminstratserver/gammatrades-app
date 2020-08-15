@@ -1,0 +1,66 @@
+{% extends 'hbi-dashboard/base.html' %}
+{% load static %}
+{% block title %} {{ title}} {% endblock %}
+
+{% block content %}
+
+{% include 'hbi-dashboard/_topbar.html' %}
+
+<div class="dashboard-main-wrapper">
+{% include 'hbi-dashboard/_leftsidebar.html' %}
+
+
+    <div class="dashboard-wrapper">
+        <div class="dashboard-finance">
+            <div class="container-fluid dashboard-content">
+
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">{{ title }}</h2>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                           <form method="post" action= "." enctype="multipart/form-data">
+
+                            {% csrf_token %}
+
+                               <p><strong>E-Proof Document <br>
+                                {{ form.document_file }}
+                               </strong></p>
+
+                               <p><strong>Title<br>
+                                {{ form.title }}
+                               </strong></p>
+
+                               <p><strong>Card Front Image <br>
+                                {{ form.image1_file }}
+                               </strong></p>
+
+                               <p><strong>Card Back Image <br>
+                                {{ form.image2_file }}
+                               </strong></p>
+
+                               <p><strong>Description <br>
+                                {{ form.description }}
+                               </strong></p>
+
+                                {{ form.list_date }}
+                               </strong></p>
+
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                          </form>
+
+
+             </div>
+            {% include 'hbi-dashboard/_footer.html' %}
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'js/david2-app.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,261 @@
+{% extends 'hbi-dashboard/base.html' %}
+{% load static %}
+{% block title %} | Blank {% endblock %}
+
+
+{% block content %}
+
+<body>
+
+{% include 'hbi-dashboard/_topbar.html' %}
+
+    <div class="dashboard-main-wrapper">
+
+        {% include 'hbi-dashboard/_leftsidebar.html' %}
+
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="dashboard-finance">
+                <div class="container-fluid dashboard-content">
+                    <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title">My Settings</h2>
+                                <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
+
+                            </div>
+                        </div>
+                    </div>
+
+ <!-- START -->
+{% for listing in blog_list %}
+
+<div class="row">
+<!-- ============================================================== -->
+<!-- [  6  ]  -->
+<!-- ============================================================== -->
+           <!-- =============================================================== -->
+            <!--  COLUMN 6                                                      -->
+            <!-- ============================================================== -->
+
+
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="card">
+                                <!-- <h5 class="card-header">My Settings</h5>  -->
+                          <div class="card-body border-top">
+                               <form class="mt-2" autocomplete="off" action="{% url 'mysettings' %}" method="post">
+                                  {% csrf_token %}
+                                  <div class="card">
+                                    <div class="card-body">
+                                        <h4>Default Country Selected (Uploading Documents)</h4>
+
+                                        <ul>
+                                        Brochure    :
+                                            <select name="brochure_country" value = '{{ user.brochure_country }}' >
+                                                <option value={{ user.brochure_country }}>{{ user.brochure_country }}</option>
+                                                <option value="ALL">All Countries</option>
+                                                <option value="BRUNEI">Brunei</option>
+                                                <option value="CAMBODIA">Cambodia</option>
+                                                <option value="HONG KONG">Hong Kong</option>
+                                                <option value="INDONESIA">Indonesia</option>
+                                                <option value="LAOS">Laos</option>
+                                                <option value="MALAYSIA">Malaysia</option>
+                                                <option value="MONGOLIA">Mongolia</option>
+                                                <option value="MYANMAR">Myanmar</option>
+                                                <option value="PAKISTAN">Pakistan</option>
+                                                <option value="PHILIPPINES">Philippines</option>
+                                                <option value="SINGAPORE">Singapore</option>
+                                                <option value="THAILAND">Thailand</option>
+                                                <option value="VIETNAM">Vietnam</option>
+                                            </select>
+                                        </ul>
+
+                                        <ul>
+                                        Certificate :
+                                            <select name="certificate_country" value = '{{ user.certificate_country }}' >
+                                                <option value={{ user.certificate_country }}>{{ user.certificate_country }}</option>
+                                                <option value="ALL">All Countries</option>
+                                                <option value="BRUNEI">Brunei</option>
+                                                <option value="CAMBODIA">Cambodia</option>
+                                                <option value="HONG KONG">Hong Kong</option>
+                                                <option value="INDONESIA">Indonesia</option>
+                                                <option value="LAOS">Laos</option>
+                                                <option value="MALAYSIA">Malaysia</option>
+                                                <option value="MONGOLIA">Mongolia</option>
+                                                <option value="MYANMAR">Myanmar</option>
+                                                <option value="PAKISTAN">Pakistan</option>
+                                                <option value="PHILIPPINES">Philippines</option>
+                                                <option value="SINGAPORE">Singapore</option>
+                                                <option value="THAILAND">Thailand</option>
+                                                <option value="VIETNAM">Vietnam</option>
+                                            </select>
+                                        </ul>
+
+                                        <ul>
+                                        E-Proof     :
+                                            <select name="eproof_country" value = '{{ user.eproof_country }}' >
+                                                <option value={{ user.eproof_country }}>{{ user.eproof_country }}</option>
+                                                <option value="ALL">All Countries</option>
+                                                <option value="BRUNEI">Brunei</option>
+                                                <option value="CAMBODIA">Cambodia</option>
+                                                <option value="HONG KONG">Hong Kong</option>
+                                                <option value="INDONESIA">Indonesia</option>
+                                                <option value="LAOS">Laos</option>
+                                                <option value="MALAYSIA">Malaysia</option>
+                                                <option value="MONGOLIA">Mongolia</option>
+                                                <option value="MYANMAR">Myanmar</option>
+                                                <option value="PAKISTAN">Pakistan</option>
+                                                <option value="PHILIPPINES">Philippines</option>
+                                                <option value="SINGAPORE">Singapore</option>
+                                                <option value="THAILAND">Thailand</option>
+                                                <option value="VIETNAM">Vietnam</option>
+                                            </select>
+                                        </ul>
+
+                                        <ul>
+                                        Manual      :
+                                            <select name="manual_country" value = '{{ user.manual_country }}' >
+                                                <option value={{ user.manual_country }}>{{ user.manual_country }}</option>
+                                                <option value="ALL">All Countries</option>
+                                                <option value="BRUNEI">Brunei</option>
+                                                <option value="CAMBODIA">Cambodia</option>
+                                                <option value="HONG KONG">Hong Kong</option>
+                                                <option value="INDONESIA">Indonesia</option>
+                                                <option value="LAOS">Laos</option>
+                                                <option value="MALAYSIA">Malaysia</option>
+                                                <option value="MONGOLIA">Mongolia</option>
+                                                <option value="MYANMAR">Myanmar</option>
+                                                <option value="PAKISTAN">Pakistan</option>
+                                                <option value="PHILIPPINES">Philippines</option>
+                                                <option value="SINGAPORE">Singapore</option>
+                                                <option value="THAILAND">Thailand</option>
+                                                <option value="VIETNAM">Vietnam</option>
+                                            </select>
+                                        </ul>
+
+                                        <ul>
+                                        Proposal    :
+                                            <select name="proposal_country" value = '{{ user.proposal_country }}' >
+                                                <option value={{ user.proposal_country }}>{{ user.proposal_country }}</option>
+                                                <option value="ALL">All Countries</option>
+                                                <option value="BRUNEI">Brunei</option>
+                                                <option value="CAMBODIA">Cambodia</option>
+                                                <option value="HONG KONG">Hong Kong</option>
+                                                <option value="INDONESIA">Indonesia</option>
+                                                <option value="LAOS">Laos</option>
+                                                <option value="MALAYSIA">Malaysia</option>
+                                                <option value="MONGOLIA">Mongolia</option>
+                                                <option value="MYANMAR">Myanmar</option>
+                                                <option value="PAKISTAN">Pakistan</option>
+                                                <option value="PHILIPPINES">Philippines</option>
+                                                <option value="SINGAPORE">Singapore</option>
+                                                <option value="THAILAND">Thailand</option>
+                                                <option value="VIETNAM">Vietnam</option>
+                                            </select>
+                                        </ul>
+
+                                        <ul>
+                                        PowerPoint  :
+                                            <select name="powerpoint_country" value = '{{ user.powerpoint_country }}' >
+                                                <option value={{ user.powerpoint_country }}>{{ user.powerpoint_country }}</option>
+                                                <option value="ALL">All Countries</option>
+                                                <option value="BRUNEI">Brunei</option>
+                                                <option value="CAMBODIA">Cambodia</option>
+                                                <option value="HONG KONG">Hong Kong</option>
+                                                <option value="INDONESIA">Indonesia</option>
+                                                <option value="LAOS">Laos</option>
+                                                <option value="MALAYSIA">Malaysia</option>
+                                                <option value="MONGOLIA">Mongolia</option>
+                                                <option value="MYANMAR">Myanmar</option>
+                                                <option value="PAKISTAN">Pakistan</option>
+                                                <option value="PHILIPPINES">Philippines</option>
+                                                <option value="SINGAPORE">Singapore</option>
+                                                <option value="THAILAND">Thailand</option>
+                                                <option value="VIETNAM">Vietnam</option>
+                                            </select>
+                                        </ul>
+
+                                        <ul>
+                                        Quotation  :
+                                            <select name="quotation_country" value = '{{ user.quotation_country }}' >
+                                                <option value={{ user.quotation_country }}>{{ user.quotation_country }}</option>
+                                                <option value="ALL">All Countries</option>
+                                                <option value="BRUNEI">Brunei</option>
+                                                <option value="CAMBODIA">Cambodia</option>
+                                                <option value="HONG KONG">Hong Kong</option>
+                                                <option value="INDONESIA">Indonesia</option>
+                                                <option value="LAOS">Laos</option>
+                                                <option value="MALAYSIA">Malaysia</option>
+                                                <option value="MONGOLIA">Mongolia</option>
+                                                <option value="MYANMAR">Myanmar</option>
+                                                <option value="PAKISTAN">Pakistan</option>
+                                                <option value="PHILIPPINES">Philippines</option>
+                                                <option value="SINGAPORE">Singapore</option>
+                                                <option value="THAILAND">Thailand</option>
+                                                <option value="VIETNAM">Vietnam</option>
+                                            </select>
+                                        </ul>
+
+
+
+
+
+
+
+                                    </div>
+                                    <div class="card-body border-top">
+
+                                         <h5>Display Number of Documents Per Page</h5>
+                                            <label class="custom-control custom-radio custom-control-inline">
+                                                <input type="radio" name="radio-inline" checked="" class="custom-control-input"value="3"><span class="custom-control-label">3 Items</span>
+                                            </label>
+                                            <label class="custom-control custom-radio custom-control-inline">
+                                                <input type="radio" name="radio-inline" class="custom-control-input" value="4"><span class="custom-control-label">4 Items</span>
+                                            </label>
+                                            <label class="custom-control custom-radio custom-control-inline">
+                                                <input type="radio" name="radio-inline" class="custom-control-input" value="5"><span class="custom-control-label">5 Items</span>
+                                            </label>
+                                            <label class="custom-control custom-radio custom-control-inline">
+                                                <input type="radio" name="radio-inline" class="custom-control-input" value="6"><span class="custom-control-label">6 Items</span>
+                                            </label>
+
+
+                                    </div>
+                                  </div>
+
+
+                                <div class="modal-footer">
+                                    <!-- <button type="button" class="btn btn-primary">Save changes</button>  -->
+                                    <input type="submit" class="btn btn-primary btn-block" value="Save" />
+                                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>  -->
+                                    <a href="{% url 'home' %}" class="btn btn-secondary" data-dismiss="modal">Close</a>
+                                </div>
+
+
+                               </form>
+                          </div>
+                    </div>
+            </div>
+ </div>
+
+{% endfor %}
+
+ <!-- END -->
+
+   </div>
+  {% include 'hbi-dashboard/_footer.html' %}       <!-- footer -->
+ </div>
+</div>
+        <!-- ============================================================== -->
+        <!-- end wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+</body>
+
+{% endblock %}

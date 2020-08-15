@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title> {{ title }}</title>
+		<meta name="description" content="Under construction, please visit later.." />
+		<meta name="keywords" content="css animation, loading effect, google plus, grid items, masonry" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico"> 
+		<link rel="stylesheet" type="text/css" href="{% static 'masonry/css/default.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'masonry/css/component.css' %}" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    	<link href="{% static 'hbi-homepage_static/css/bootstrap.min.css' %}" rel="stylesheet">
+    	<link href="{% static 'hbi-homepage_static/css/mdb.min.css' %}" rel="stylesheet">
+    	<link href="{% static 'hbi-homepage_static/css/style.css' %}" rel="stylesheet">
+
+	</head>
+	<body>
+		<div class="container">
+
+
+		<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+      <div class="container">
+
+        <!-- Brand -->
+
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <!-- Left -->
+          <ul class="navbar-nav mr-auto">
+            <!--
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">About MDB</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://mdbootstrap.com/getting-started/" target="_blank">Free download</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://mdbootstrap.com/bootstrap-tutorial/" target="_blank">Free tutorials</a>
+            </li> -->
+          </ul>
+
+          <!-- Right -->
+          <ul class="navbar-nav nav-flex-icons">
+
+			  <li class="nav-item">
+              <a href="{% url 'home' %}" class="nav-link" target="_blank">Home</a>
+              </li>
+
+            <li class="nav-item">
+              <a href="{% url 'login' %}" class="nav-link" target="_blank">
+                Login
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="{% url 'gallery' %}" class="nav-link" target="_blank">Demo</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </nav>
+
+
+<!-- Navbar -->
+
+
+
+
+
+
+
+			<!--
+			 Top Navigation
+			<div class="codrops-top clearfix">
+				<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Tutorials/ExpandingSearchBar/"><span>Previous Demo</span></a>
+				<span class="right"><a href="http://dribbble.com/erikamackley">Illustrations by by Erika Mackley</a><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=15677"><span>Back to the Codrops Article</span></a></span>
+			</div>
+			-->
+
+			<header style="margin-top:50px">
+				<h1>GammaTrades Demo Gallery 2.0</h1><span><h5>Currently under construction, please re-visit later.. </h5></span>
+
+			</header>
+
+
+
+
+
+
+
+
+		</div>
+		<script src="{% static 'masonry/js/masonry.pkgd.min.js' %}"></script>
+		<script src="{% static 'masonry/js/imagesloaded.js' %}"></script>
+		<script src="{% static 'masonry/js/classie.js' %}"></script>
+		<script src="{% static 'masonry/js/AnimOnScroll.js' %}"></script>
+		<script src="{% static 'masonry/js/modernizr.custom.js' %}"></script>
+		<script>
+			new AnimOnScroll( document.getElementById( 'grid' ), {
+				minDuration : 1.4,
+				maxDuration : 1.7,
+				viewportFactor : 0.2
+			} );
+		</script>
+	</body>
+</html>
