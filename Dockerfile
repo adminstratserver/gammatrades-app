@@ -19,15 +19,35 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     postgresql \
     postgresql-contrib \
-    nginx
+    git
 
-# create new user
-RUN adduser remote_user
-RUN echo remote_user:1234 | chpasswd
-RUN mkdir /home/remote_user/.ssh
-RUN chmod 700 /home/remote_user/.ssh
+RUN pip3 install \
+        django==3.0.7 \
+        Pillow==7.2.0 \
+        djangorestframework==3.10.3 \
+        django-rest-auth==0.9.5 \
+        python-dotenv==0.13.0 \
+        django-cors-headers==3.4.0 \
+        django-allauth==0.42.0 \
+        asgiref==3.2.3 \
+        psycopg2==2.8.3 \
+        psycopg2-binary==2.8.3 \
+        gunicorn==19.7.1 \
+        django-storages==1.9.1 \
+        boto3==1.14.11
 
-#COPY remote-key.pub /home/remote_user/.ssh/authorized_keys
+# run entrypoint.sh
+ENTRYPOINT ["/usr/src/app/entrypoint.prod.sh"]
+
+RUN adduser remote_user && \
+    echo remote_user:1234 | chpasswd && \
+    mkdir /home/remote_user/.ssh && \
+    chmod 700 /home/remote_user/.ssh
+
+RUN echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDAbMEL2d3vdprIcHWM6CW+b89lisiHY5a3Yl/IS8I8+8fMQwxkkA0+Xeu9BI2orl92+nF7swfUFelc5d3xmvDVDD9YAda5CWSb0ogpFsqhSs96faHZYDbxaP8zjclkgpyuJAuqLK8oGdnuqesip2rTd7tiCTGzynPieTTnUKmoW3A7LhfrjpEyouxixcKzYJhPwb+1ciUzOnV+eKlPlGaVuaBPesAa8ABpOO7XihAzmMY+OzsNxtDhcNOscZtBrfznLRsr5jNbOtsVnllXFG2F8QB0M5BeaXnMCKlcQaxySiNs7+aZYutWIkN6GVmGa7mOX7+PAC1DMspPd/hhFW09 root@localhost' \
+      > /home/remote_user/.ssh/authorized_keys
+
+# COPY ./remote-key.pub /home/remote_user/.ssh/authorized_keys
 RUN chown remote_user:remote_user -R /home/remote_user/.ssh && \
     chmod 600 /home/remote_user/.ssh/authorized_keys
 
@@ -45,27 +65,3 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
-
-#COPY ./requirements4.txt /usr/src/app/requirements4.txt
-#RUN pip3 install -r requirements4.txt
-
-RUN pip3 install \
-        django==3.0.7 \
-        Pillow==7.2.0 \
-        djangorestframework==3.10.3 \
-        django-rest-auth==0.9.5 \
-        python-dotenv==0.13.0 \
-        django-cors-headers==3.4.0 \
-        django-allauth==0.42.0 \
-        asgiref==3.2.3 \
-        psycopg2==2.8.3 \
-        psycopg2-binary==2.8.3 \
-        gunicorn==19.7.1 \
-        django-storages==1.9.1 \
-        boto3==1.14.11
-
-# copy project
-# COPY . /usr/src/app/
-
-# run entrypoint.sh
-ENTRYPOINT ["/usr/src/app/entrypoint.prod.sh"]
