@@ -6,7 +6,7 @@ from pathlib import Path
 IS_DEV=True
 
 if IS_DEV==False:
-    dotenv_path = '/home/jenkins/gammatrades_18thAug20/ssh-key/.env'
+    dotenv_path = '/home/jenkins/gammatrades_18thAug20/ssh-keys/.env'
     load_dotenv(dotenv_path)
 else:
     dotenv_path = Path('.') / '.env'
