@@ -18,6 +18,7 @@ from django.utils.safestring import mark_safe
 from django.contrib.auth.decorators import login_required
 from listings.models import Product
 from django.utils.encoding import force_bytes, force_text, DjangoUnicodeDecodeError
+import os
 
 @login_required
 def blank(request):
@@ -48,10 +49,13 @@ def nav(request):
 
 def gallery(request):
     #print('HERE at gallery')
+    DEBUG1 = os.environ.get('TESTDATA')
+    print("DEBUG1",DEBUG1)
     qs = Product.objects.filter(is_published=True, type="eproof")
     context = {
         "title": "GammaTrades Gallery",
         "listings": qs,
+        "debug": DEBUG1
     }
     #print('1. qs=',qs)
     return render(request, 'hbi-homepage/gallery.html', context)

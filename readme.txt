@@ -20,7 +20,7 @@ su - jenkins
 cd /home/jenkins
 mkdir .ssh
 cd .ssh
-cp -r /root/.ssh/authorized_keys /home/jenkins
+cp -r /root/.ssh/authorized_keys /home/jenkins/.ssh/authorized_keys
 chown 1000:1000 authorized_keys
 
 sudo groupadd docker
