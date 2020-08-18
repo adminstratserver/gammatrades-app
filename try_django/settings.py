@@ -1,17 +1,11 @@
 import os
 from dotenv import load_dotenv
 load_dotenv()
-from pathlib import Path
+from os.path import join, dirname
 
-IS_DEV=True
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
 
-if IS_DEV==False:
-    dotenv_path = '/home/jenkins/gammatrades_18thAug20/ssh-keys/.env'
-    load_dotenv(dotenv_path)
-else:
-    dotenv_path = Path('.') / '.env'
-    #dotenv_path = 'D:/test/.env'
-    load_dotenv(dotenv_path)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

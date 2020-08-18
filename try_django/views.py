@@ -19,6 +19,13 @@ from django.contrib.auth.decorators import login_required
 from listings.models import Product
 from django.utils.encoding import force_bytes, force_text, DjangoUnicodeDecodeError
 import os
+from pathlib import Path
+from os.path import join, dirname
+
+
+
+
+
 
 @login_required
 def blank(request):
@@ -49,6 +56,8 @@ def nav(request):
 
 def gallery(request):
     #print('HERE at gallery')
+
+
     DEBUG1 = os.environ.get('TESTDATA')
     print("DEBUG1",DEBUG1)
     qs = Product.objects.filter(is_published=True, type="eproof")
